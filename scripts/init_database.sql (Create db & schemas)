@@ -12,7 +12,7 @@ Running this script will drop the entire database "DataWarehouse' if it already 
 All data in the database will be permanantly deleted. Proceed with caution.
 */
 
---Use Master 
+--Use Master
 use master;
 
 --Drop and re-create DataWarehouse database 
