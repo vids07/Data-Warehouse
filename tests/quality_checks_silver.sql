@@ -20,7 +20,7 @@ Usage Notes:
 -- ====================================================================
 -- Checking 'silver.crm_cust_info'
 -- ====================================================================
--- Check for NULLs or Duplicates in Primary Key
+-- Check for NULLs or Duplicates in Primary Key, Not Empty
 -- Expectation: No Results
 SELECT 
     cst_id,
@@ -28,6 +28,14 @@ SELECT
 FROM silver.crm_cust_info
 GROUP BY cst_id
 HAVING COUNT(*) > 1 OR cst_id IS NULL;
+
+-- Check for empty primary key
+-- Expectation: No Results
+SELECT 
+    *
+FROM silver.crm_cust_info
+where cst_id = ' ';
+
 
 -- Check for Unwanted Spaces
 -- Expectation: No Results
